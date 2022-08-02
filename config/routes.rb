@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :transactions1s
   resources :categories_transactions
-  resources :transactions
   resources :categories
   root "users#index"
   devise_for :users
