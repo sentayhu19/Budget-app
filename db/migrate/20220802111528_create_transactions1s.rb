@@ -3,7 +3,7 @@ class CreateTransactions1s < ActiveRecord::Migration[7.0]
     create_table :transactions1s do |t|
       t.string :name
       t.decimal :amount
-      t.references :User, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
