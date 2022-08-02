@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  transactions: one
+  transactions1s: one
   categories: one
 
 two:
-  transactions: two
+  transactions1s: two
   categories: two
