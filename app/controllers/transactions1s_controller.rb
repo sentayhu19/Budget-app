@@ -3,7 +3,7 @@ class Transactions1sController < ApplicationController
 
   # GET /transactions1s or /transactions1s.json
   def index
-    @transactions1s = Transactions1.all
+    @transactions1s = Transactions1.where(user: current_user)
   end
 
   # GET /transactions1s/1 or /transactions1s/1.json
@@ -12,6 +12,7 @@ class Transactions1sController < ApplicationController
   # GET /transactions1s/new
   def new
     @transactions1 = Transactions1.new
+    @categories = Category.where(user: current_user)
   end
 
   # GET /transactions1s/1/edit
@@ -20,6 +21,10 @@ class Transactions1sController < ApplicationController
   # POST /transactions1s or /transactions1s.json
   def create
     @transactions1 = Transactions1.new(transactions1_params)
+  
+    @transactions1.user = current_user
+    @transactions1.save
+    create_cat_transacs unless params[:categories].blank?
 
     respond_to do |format|
       if @transactions1.save
@@ -63,7 +68,12 @@ class Transactions1sController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
+  def  create_cat_transacs
+    params[:categories].each do |k, _v|
+      CategoriesTransaction1.create(category: Category.find(k), transactions1: @transactions1)
+    end
+  end
   def transactions1_params
-    params.require(:transactions1).permit(:name, :amount, :User_id)
+    params.require(:transactions1).permit(:name, :amount)
   end
 end

@@ -13,4 +13,14 @@
  *= require_tree .
  *= require_self
  */
- 
+ .nav-i{
+    width: 50px;
+ }
+ .nav1{
+    position: absolute;
+    top: 0;
+    width: 100%;
+ }
+ .login-form{
+    margin-top: 40px;
+ }
