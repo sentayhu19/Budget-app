@@ -21,7 +21,7 @@ class Transactions1sController < ApplicationController
   # POST /transactions1s or /transactions1s.json
   def create
     @transactions1 = Transactions1.new(transactions1_params)
-  
+
     @transactions1.user = current_user
     @transactions1.save
     create_cat_transacs unless params[:categories].blank?
@@ -68,11 +68,12 @@ class Transactions1sController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  def  create_cat_transacs
+  def create_cat_transacs
     params[:categories].each do |k, _v|
-      CategoriesTransaction1.create(category: Category.find(k), transactions1: @transactions1)
+      CategoriesTransaction1.create(category: Category.find(k), transactions1: @transactions1s)
     end
   end
+
   def transactions1_params
     params.require(:transactions1).permit(:name, :amount)
   end

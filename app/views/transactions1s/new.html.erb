@@ -18,6 +18,7 @@
     <% @categories.each do |category| %>
       <%= label_tag category.name %>
       <%= check_box_tag "categories[#{category.id}]", category.name %>
+       <%= check_box_tag "categories[#{category.id}]", category.id %>
       <br />
     <% end %>
   </section>

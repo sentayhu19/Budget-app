@@ -8,7 +8,20 @@
  
   <br>
   <% @transactions1s.each do |transac| %>
-    <%= render partial: "shared/transac", locals: { transac: transac } %>
+    <%= link_to category_path(category.id) do %>
+  <article class="row d-flex border my-1">
+    <div class="col-3">
+      <img src=<%= category.icon %> alt="Category Icon" class="m-1 img-fluid rounded-1">
+    </div>
+    <div class="col-6 pt-3">
+      <p class="category-name"><%= category.name %></p>
+      <span class="date"><%= category.created_at %></span>
+    </div>
+    <div class="col-3 pt-3">
+      <span class="amount-dls">$<%= category.amount %></span>
+    </div>
+  </article>
+<% end %>
   <% end %>
 </section>
 

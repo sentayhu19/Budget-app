@@ -24,12 +24,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_02_112332) do
   end
 
   create_table "categories_transaction1s", force: :cascade do |t|
-    t.bigint "transactions1s_id", null: false
-    t.bigint "categories_id", null: false
+    t.bigint "transactions1_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_categories_transaction1s_on_categories_id"
-    t.index ["transactions1s_id"], name: "index_categories_transaction1s_on_transactions1s_id"
+    t.index ["category_id"], name: "index_categories_transaction1s_on_category_id"
+    t.index ["transactions1_id"], name: "index_categories_transaction1s_on_transactions1_id"
   end
 
   create_table "transactions1s", force: :cascade do |t|
@@ -60,7 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_02_112332) do
   end
 
   add_foreign_key "categories", "users"
-  add_foreign_key "categories_transaction1s", "categories", column: "categories_id"
-  add_foreign_key "categories_transaction1s", "transactions1s", column: "transactions1s_id"
+  add_foreign_key "categories_transaction1s", "categories"
+  add_foreign_key "categories_transaction1s", "transactions1s"
   add_foreign_key "transactions1s", "users"
 end
