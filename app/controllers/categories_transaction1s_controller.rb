@@ -7,7 +7,9 @@ class CategoriesTransaction1sController < ApplicationController
   end
 
   # GET /categories_transaction1s/1 or /categories_transaction1s/1.json
-  def show; end
+  def show
+    # show
+  end
 
   # GET /categories_transaction1s/new
   def new
