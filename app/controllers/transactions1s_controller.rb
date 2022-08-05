@@ -76,6 +76,6 @@ class Transactions1sController < ApplicationController
   end
 
   def transactions1_params
-    params.require(:transactions1).permit(:name, :amount)
+    params.require(:transactions1).permit(:name, :amount, :category)
   end
 end
