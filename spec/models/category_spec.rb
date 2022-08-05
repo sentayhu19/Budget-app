@@ -9,7 +9,6 @@ RSpec.describe Category, type: :model do
       Category.create(name: 'Food', icon: 'https://picsum.photos/200', user: @user)
     end
     before { subject.save }
-    
 
     it 'is valid with the inserted valid attributes' do
       expect(subject).to be_valid
