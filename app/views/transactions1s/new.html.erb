@@ -4,14 +4,13 @@
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
+<h2 class="text-center">Add a New Transaction</h2>
 <%= form_with(model: @transactions1) do |form| %>
-  <section class="container">
+  <section class="container transaction-m">
    <div class="d-flex flex-column align-items-center">
  <div class= "d-flex flex-column align-items-center w-75 mb-3">
       <%= form.text_field :name, class: "form-control w-75 mb-3", placeholder: "Name" %>
     
-
-  
       <%= form.text_field :amount, class: "form-control w-75", placeholder: "Amount" %>
  
 

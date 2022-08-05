@@ -111,6 +111,9 @@ p {
   color: white;
 }
 
+.transaction-m{
+   margin-top: 100px;
+}
 /* Animation */
 
 .parallax > use {
