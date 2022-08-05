@@ -7,9 +7,6 @@
  <div class= "d-flex flex-column align-items-center w-75 mb-3">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-75 mb-3", Placeholder:"Email" %>
   
-
- 
-
     <%= f.password_field :password, autocomplete: "current-password", class: "form-control w-75", Placeholder: "Password" %>
   
 
@@ -21,12 +18,11 @@
     </div>
   
   <% end %>
-
-
     <%= f.submit "Log in" , class: "btn btn-primary" %>
 </div>
 </div>
 <% end %>
-
+<div class="text-center"> 
 <%= render "devise/shared/links" %>
+</div>
 </section>

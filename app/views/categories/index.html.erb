@@ -18,16 +18,13 @@
       <p class="category-name"><%= category.name %></p>
       <span class="date"><%= category.created_at %></span>
     </div>
-    <%# <div class="col-3 pt-3">
-      <span class="amount-dls">$<%= category.amount %></span>
-    </div> %>
   </article>
 <% end %>
     <% end %>
   <% end %>
 </section>
-<div class="bottom-container position-fixed bottom-0 w-100">
+<div class="bottom-container position-fixed bottom-0 w-100 btn-bg">
   <div class="inner-bottom-container text-center">
-    <%= link_to "NEW CATEGORY", new_category_path, class: "bottom-btn" %>
+    <%= link_to "NEW CATEGORY", new_category_path, class: "bottom-btn text-white border border-white w-90" %>
   </div>
 </div>

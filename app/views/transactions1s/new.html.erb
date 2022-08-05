@@ -18,14 +18,13 @@
     <% @categories.each do |category| %>
       <%= label_tag category.name %>
       <%= check_box_tag "categories[#{category.id}]", category.name %>
-       <%= check_box_tag "categories[#{category.id}]", category.id %>
       <br />
     <% end %>
   </section>
 
-  <div class="bottom-container position-fixed bottom-0 w-100">
+  <div class="bottom-container position-fixed bottom-0 w-100 btn-bg">
     <div class="inner-bottom-container text-center">
-      <%= form.submit "Add Transaction", class: "bottom-btn new-btn" %>
+      <%= form.submit "Add Transaction", class: "bottom-btn new-btn btn-bg ad-tran" %>
     </div>
   </div>
 <% end %>
