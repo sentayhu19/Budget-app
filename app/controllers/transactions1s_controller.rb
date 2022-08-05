@@ -24,7 +24,8 @@ class Transactions1sController < ApplicationController
 
     @transactions1.user = current_user
     @transactions1.save
-    create_cat_transacs unless params[:categories].blank?
+    create_cat_transacs 
+    # unless params[:categories].blank?
 
     respond_to do |format|
       if @transactions1.save
