@@ -14,10 +14,6 @@ RSpec.describe 'Check new category page', type: :system do
       sleep(1)
     end
 
-    after(:all) do
-      @user.destroy
-    end
-
     it 'should show the right content' do
       visit new_category_path
       expect(page).to have_field('Name')
