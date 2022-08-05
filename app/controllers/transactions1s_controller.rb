@@ -24,13 +24,12 @@ class Transactions1sController < ApplicationController
 
     @transactions1.user = current_user
     @transactions1.save
-    create_cat_transacs
-    # unless params[:categories].blank?
+    create_cat_transacs unless params[:categories].blank?
 
     respond_to do |format|
       if @transactions1.save
-        format.html { redirect_to transactions1_url(@transactions1), notice: 'Transactions1 was successfully created.' }
-        format.json { render :show, status: :created, location: @transactions1 }
+        format.html { redirect_to transactions1s_path, notice: 'Transactions1 was successfully created.' }
+        format.json { render :index, status: :created, location: @transactions1 }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @transactions1.errors, status: :unprocessable_entity }
@@ -43,7 +42,7 @@ class Transactions1sController < ApplicationController
     respond_to do |format|
       if @transactions1.update(transactions1_params)
         format.html { redirect_to transactions1_url(@transactions1), notice: 'Transactions1 was successfully updated.' }
-        format.json { render :show, status: :ok, location: @transactions1 }
+        format.json { render :index, status: :ok, location: @transactions1 }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @transactions1.errors, status: :unprocessable_entity }

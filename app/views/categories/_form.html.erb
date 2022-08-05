@@ -6,18 +6,21 @@
 <% end %>
 <%= form_with(model: category) do |form| %>
   <section class="container">
-    <div class="my-3">
-      <%= form.text_field :name, class: "text-input", placeholder: "Name" %>
-    </div>
+  <div class="d-flex flex-column align-items-center">
+ <div class= "d-flex flex-column align-items-center w-75 mb-3">
+      <%= form.text_field :name, class: "form-control w-75 mb-3 ", placeholder: "Name" %>
+   
 
-    <div>
-      <%= form.text_field :icon, class: "text-input", placeholder: "Icon" %>
-    </div>
+  
+      <%= form.text_field :icon, class: "form-control w-75 mb-3", placeholder: "Icon" %>
+    
   </section>
 
-  <div class="bottom-container position-fixed bottom-0 w-100">
+  <div class="bottom-container position-fixed bottom-0 w-100 btn-bg">
     <div class="inner-bottom-container text-center">
-      <%= form.submit "ADD CATEGORY", class: "bottom-btn new-btn" %>
+      <%= form.submit "ADD CATEGORY", class: "bottom-btn text-white border w-90 btn-bg" %>
+    </div>
+    </div>
     </div>
   </div>
 <% end %>
