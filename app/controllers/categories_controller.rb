@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   def show
-    @transactions1s = Category.where(user: current_user)
+    @transactions1s = @category.transactions1s
   end
 
   # GET /categories/new

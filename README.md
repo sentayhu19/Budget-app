@@ -67,6 +67,9 @@ rspec
 - GitHub: [@sentayhu19](https://github.com/sentayhu19)
 - LinkedIn: [sentayhu-berhanu](https://www.linkedin.com/in/sentayhu-berhanu-6376579a/)
 
+## Acknowledgment
+For the desgin of this app thanks to the author of [the original design](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)) 
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
