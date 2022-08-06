@@ -1,0 +1,20 @@
+<section class="container1">
+    <% @transactions1s.each do |transaction| %>
+        <div class="row border my-1">
+  <div class="col-9">
+
+    <p class="transac-name">Transaction <%= transaction.name %></p>
+    <p class="date"><%= transaction.created_at %></p>
+  </div>
+  <div class="col-3">
+    <span class="amount-dls">$<%= transaction.amount %></span>
+  </div>
+</div>
+    <% end %>
+</section>
+
+<div class="bottom-container position-fixed bottom-0 w-100 btn-bg">
+  <div class="inner-bottom-container text-center">
+    <%= link_to "New transactions", new_transactions1_path, class: "text-white" %>
+  </div>
+</div>

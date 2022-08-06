@@ -1,0 +1,31 @@
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<section class="container">
+  <% if @categories.blank?%>
+    <p>You don't have any category yet! Click below to add one.</p>
+  <% else %>
+    <% @categories.each do |category| %>
+      <%= link_to category_path(category.id) do %>
+  <article class="row d-flex border my-1">
+    <div class="col-3">
+      <img src=<%= category.icon %> alt="Category Icon" class="m-1 img-fluid rounded-1">
+    </div>
+    <div class="col-6 pt-3">
+      <p class="category-name"><%= category.name %></p>
+      <span class="date"><%= category.created_at %></span>
+    </div>
+    
+  </article>
+<% end %>
+    <% end %>
+  <% end %>
+</section>
+<div class="bottom-container position-fixed bottom-0 w-100">
+  <div class="inner-bottom-container text-center">
+    <%= link_to "NEW CATEGORY", new_category_path, class: "bottom-btn" %>
+  </div>
+</div>

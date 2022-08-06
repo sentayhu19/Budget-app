@@ -1,0 +1,26 @@
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<%= form_with(model: category) do |form| %>
+  <section class="container">
+  <div class="d-flex flex-column align-items-center">
+ <div class= "d-flex flex-column align-items-center w-75 mb-3">
+      <%= form.text_field :name, class: "form-control w-75 mb-3 ", placeholder: "Name" %>
+   
+
+  
+      <%= form.text_field :icon, class: "form-control w-75 mb-3", placeholder: "Icon" %>
+    
+  </section>
+
+  <div class="bottom-container position-fixed bottom-0 w-100 btn-bg">
+    <div class="inner-bottom-container text-center">
+      <%= form.submit "ADD CATEGORY", class: "bottom-btn text-white border w-90 btn-bg" %>
+    </div>
+    </div>
+    </div>
+  </div>
+<% end %>

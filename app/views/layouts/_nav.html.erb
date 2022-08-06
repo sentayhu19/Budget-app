@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+  <div>
+<%= link_to 'javascript:history.back()', class:'text-white' do %>
+   <%= heroicon "arrow-left", options: { class: "nav-i text-white" }  %>
+   <%end%>
+   </div>
+  <a class="navbar-brand" href="#">Super Budget App</a>
+  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-between" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+       <li class="nav-item">
+         <%= link_to 'Categories', categories_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+         <%= link_to 'Transactions', transactions1s_path, class: "nav-link" %>
+      </li>
+     
+      <li class="nav-item">
+         <button class="btn btn-danger signout">
+            <%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete, class: "nav-link" %>
+          </button>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
