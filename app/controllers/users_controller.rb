@@ -3,5 +3,5 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def Show; end
+  # def Show; end
 end

@@ -52,10 +52,10 @@ class Transactions1sController < ApplicationController
 
   # DELETE /transactions1s/1 or /transactions1s/1.json
   def destroy
-    @transactions1.destroy
+    @transactions1s.destroy
 
     respond_to do |format|
-      format.html { redirect_to transactions1s_url, notice: 'Transactions1 was successfully destroyed.' }
+      format.html { redirect_to transactions_url, notice: 'Transaction was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
