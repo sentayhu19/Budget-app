@@ -29,7 +29,7 @@ class Transactions1sController < ApplicationController
     respond_to do |format|
       if @transactions1.save
         format.html { redirect_to transactions1s_path, notice: 'Transactions1 was successfully created.' }
-        format.json { render :index, status: :created, location: @transactions1 }
+        format.json { render :show, status: :created, location: @category }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @transactions1.errors, status: :unprocessable_entity }

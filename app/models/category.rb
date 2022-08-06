@@ -4,7 +4,8 @@ class Category < ApplicationRecord
   has_many :transactions1s, through: :category_transactions1s
   validates :name, presence: true
   def amount
-    0
+    result = 0
     # transactions1s.each { |transactions1| result += transactions1.amount }
+    result
   end
 end
