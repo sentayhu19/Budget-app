@@ -20,7 +20,17 @@
   </article>
 <% end %>
   <br>
- 
+  <% @transactions1s.each do |transac| %>
+    <article class="row border my-1">
+  <div class="col-9">
+    <p class="transac-name">Transaction <%= transac.name %></p>
+    <p class="date"><%= transac.created_at %></p>
+  </div>
+  <div class="col-3">
+    <span class="amount-dls">$<%= transac.amount %></span>
+  </div>
+</article>
+  <% end %>
 </section>
 
 <div class="bottom-container position-fixed bottom-0 w-100">
