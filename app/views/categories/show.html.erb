@@ -5,28 +5,26 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 <section class="container">
- 
-  <br>
-  <% @categories.each do |transac| %>
-    <%= link_to category_path(category.id) do %>
+  <%= link_to category_path(@category.id) do %>
   <article class="row d-flex border my-1">
     <div class="col-3">
-      <img src=<%= category.icon %> alt="Category Icon" class="m-1 img-fluid rounded-1">
+      <img src=<%= @category.icon %> alt="Category Icon" class="m-1 img-fluid rounded-1">
     </div>
     <div class="col-6 pt-3">
-      <p class="category-name"><%= category.name %></p>
-      <span class="date"><%= category.created_at %></span>
+      <p class="category-name"><%= @category.name %></p>
+      <span class="date"><%= @category.created_at %></span>
     </div>
     <div class="col-3 pt-3">
-      <span class="amount-dls">$<%= category.amount %></span>
+      <span class="amount-dls">$<%= @category.amount %></span>
     </div>
   </article>
 <% end %>
-  <% end %>
+  <br>
+ 
 </section>
 
 <div class="bottom-container position-fixed bottom-0 w-100">
   <div class="inner-bottom-container text-center">
-    <%= link_to "NEW TRANSACTION", new_transactions1s_path, class: "bottom-btn" %>
+    <%= link_to "NEW TRANSACTION", new_transactions1_path, class: "bottom-btn" %>
   </div>
 </div>
